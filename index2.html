@@ -1,0 +1,408 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Галерея</title>
+</head>
+<body bgcolor="#0D1117" text="#C0C0C0">
+    <style type="text/css">
+        span.inlineBlock {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .parent {
+            width: 100%;
+            
+        }
+
+        .child1 {
+            width: 40%;
+            background-color: #2D3A4F;
+        }
+
+        .child2 {
+            width: 60%;
+            background: linear-gradient(to bottom left, #191970 50%, #181A36 50%);
+        }
+
+        .blk {
+            padding: 20px;
+            border: 2px solid #E81E25;
+            margin: 10px;
+        }
+
+        .layer3 {
+            width: 1220px; /* Ширина */
+            padding: 25px; /* Поля */
+            background: #fc0; /* Колір фона */
+            border: 5px dashed black; /* Параметри рамки*/
+            
+        }
+        .layer4 {
+            width: 1220px; /* Ширина */
+            padding: 25px; /* Поля */
+            background: linear-gradient(to left, #2D3A4F 0%, #0D1117 100%); /* Колір фона */
+            
+        }
+        .layer5 {
+            width: 1220px; /* Ширина */
+            padding: 25px; /* Поля */
+            background: linear-gradient(to right, #2D3A4F 0%, #0D1117 100%); /* Колір фона */
+            margin-right: 1%;
+        }
+
+        .header1 {
+            height: 100px;
+            background: radial-gradient(#2D3A4F, #0D1117);
+        }
+
+        .content1 {
+            background: linear-gradient(to left, #2D3A4F 0%, #0D1117 100%);
+        }
+
+        .nav {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            background-color: #1D3740;
+        }
+
+            .nav a {
+                float: left;
+                padding: 12px 14px;
+                display: block;
+                color: #fff;
+                font-size: 18px;
+            }
+
+        nav a:hover {
+            color: #000;
+            background: #f8bbd0;
+        }
+
+        .main {
+            padding: 14px;
+            margin-top: 35px;
+            height: 120px;
+        }
+
+        .footer {
+            height: 140px;
+            margin-top: 200px;
+            background: linear-gradient(to bottom, #19202B 0%,#2D3A4F 100%);
+            text-align: center;
+            font-size: 14px;
+        }
+        /* The side navigation menu */
+        .sidebar {
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            background-color: #19202B;
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+        }
+
+            /* Sidebar links */
+            .sidebar a {
+                display: block;
+                color: #C0C0C0;
+                padding: 16px;
+                text-decoration: none;
+            }
+
+                /* Active/current link */
+                .sidebar a.active {
+                    background-color: #1E2836;
+                    color: white;
+                }
+
+                /* Links on mouse-over */
+                .sidebar a:hover:not(.active) {
+                    background-color: #555;
+                    color: white;
+                }
+
+        /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+        div.content {
+            margin-left: 200px;
+            padding: 1px 16px;
+            height: 1000px;
+        }
+
+        /* On screens that are less than 700px wide, make the sidebar into a topbar */
+        @media screen and (max-width: 700px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+                .sidebar a {
+                    float: left;
+                }
+
+            div.content {
+                margin-left: 0;
+            }
+        }
+
+        /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+        @media screen and (max-width: 400px) {
+            .sidebar a {
+                text-align: center;
+                float: none;
+            }
+        }
+
+        .rr {
+            font-family: Pompadur, 'Comic Sans MS', cursive;
+        }
+        .rrr {
+            font-family: Brush Script MT, Brush Script Std, cursive;
+            color: #EBAE1D;
+            font-size: 74px;
+        }
+        .colortext {
+            color: #0000ff;
+        }
+
+        .colortext1 {
+            color: #FF8C00;
+        }
+        .video_3 {
+            overflow: hidden;
+        }
+
+        .video_3-row {
+            margin: 0 -10px 0 -10px;
+        }
+
+        .video_3-col {
+            float: left;
+            width: 33.3%;
+            margin-bottom: 20px;
+        }
+
+        .video_3-wrp {
+            position: relative;
+            padding-top: 56.25%;
+            margin: 0 10px 0 10px;
+            box-sizing: border-box;
+        }
+
+            .video_3-wrp iframe {
+                width: 100%;
+                height: 100%;
+                display: block;
+                position: absolute;
+                margin: 0;
+                top: 0;
+                left: 0;
+                border: none;
+            }
+
+        @media screen and (max-width:1200px) {
+            .video_3-col {
+                width: 50%;
+            }
+        }
+
+        @media screen and (max-width:800px) {
+            .video_3-col {
+                width: 100%;
+            }
+        }
+
+    </style>
+
+    <div class="rr">
+        <!-- The sidebar -->
+        <div class="sidebar">
+            <a class="active" href="#contact">Фото галерея</a>
+            <a href="index1.html" target="_blank">Головна</a>
+            <a href="index3.html" target="_blank">рублі</a>
+        </div>
+
+        <!-- Page content -->
+        <div class="content">
+
+            <div class="nav">
+                <a href="#home">Главная</a>
+                <a href="#news">Новости</a>
+                <a href="#contact">Контакт</a>
+            </div>
+            <div class="main">
+                <h1><span class="colortext"></h1></span>
+                <hr></hr>
+                <div class="header1"><br><center><h1><div class="rrr">Chevrolet Impala 1967</div></h1></center></div>
+            </div>
+            <div class="content1">
+                <h4>Фото та відео галерея</h4>
+                <p>На даній сторінці розміщені медіа файли (фото та відео) на певну тематику.</p>
+            </div>
+            <br>
+            <div align="left" class="layer3">
+                <div class="video_3">
+                    <div class="video_3-row">
+                        <div class="video_3-col">
+                            <div class="video_3-wrp">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/cZ4BHqQdxZ8"></iframe>
+                            </div>
+                        </div>
+                        <div class="video_3-col">
+                            <div class="video_3-wrp">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/EsaC6LUVaVg"></iframe>
+                            </div>
+                        </div>
+                        <div class="video_3-col">
+                            <div class="video_3-wrp">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/8g5FUHdT3JM"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <span class="inlineBlock parent">
+                <span class="inlineBlock layer4">
+                    <span class="inlineBlock child1">
+                        <div class="blk">
+                            Легендарний Chevrolet Impala 1967 року, на якому подорожували
+                            у пошуках будь-якої нечисті Дін та Сем Вінчестери у популярному
+                            американському серіалі «Надприродне».
+                            <p>
+                                --Саме завдяки цьому серіалу
+                                багато наших автолюбителів дізналися про такий рідкісний
+                                автомобіль як Шевроле Імпала.--
+                            </p>
+                        </div>
+                    </span><span class="inlineBlock child2">
+                        <div class="blk">
+                            <table align="center" border="1px;" style="float= " top">
+                                <tbody>
+                                    <tr>
+                                        <td>Тип кузова</td>
+                                        <td>хардтоп седан</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Вага</td>
+                                        <td>1564.9 кг</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Мотор</td>
+                                        <td>427 335bhp-425bhp Turbo Jet V8</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Об'єм мотора</td>
+                                        <td>6,7 л.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Потужність</td>
+                                        <td>до 425 к.с.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Швидкість</td>
+                                        <td>до 200 км/ч.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Розхід палива</td>
+                                        <td>до 26л. на 100 км.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Тормоза</td>
+                                        <td>дискові</td>
+                                    </tr>
+                                    <tr>
+                                        <td>КПП </td>
+                                        <td>4-ступінчаста, автоматична. Перемикач на кермі</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </span>
+                </span>
+            </span>
+            <span class="inlineBlock parent">
+                <span class="inlineBlock layer4">
+                    <span class="inlineBlock child2">
+                        <div class="blk">
+                            <img src="https://avtoaziya.ru/images/FOTO/1/Chevrolet-impala-1967-8.jpg"
+                                 width="100%" height="100%">
+                        </div>
+                    </span><span class="inlineBlock child1">
+                               <div class="blk">
+                                   --Як бачите, технічні характеристики Chevrolet Impala
+                                   1967 SS просто вражають. Автомобіль вагою майже дві тонни
+                                   з тришвидкісним автоматом може розганятися до першої сотні
+                                   лише за 7,0 секунд.--
+                                   <p>
+                                      -- Потужність 6-ти циліндрового двигуна об'ємом 250 кубічних дюймів становить 155 кінських сил з піком моменту, що крутить, 319 Нм. З таким двигуном чотиридверний хардтоп розганяється до 152 км/година.
+                                       Менш потужний двигун V8 з робочим об'ємом 307 кубічних дюймів міг видавати 200 кінських сил, потужність двигуна об'ємом 327 кубічних дюймів (5,4 літра) становила 250 кінських сил, 396-й атмосферник з об'ємом 6,5 . яка не така вже низька для класичних автомобілів та вимагала застосовувати досить якісне паливо.
+                                       Двигун Turbo Jet V8 із системою динамічного наддуву (не плутайте з турбонаддувом) та об'ємом 6,7 літра має максимальну віддачу 340 кінських сил, до першої сотні він розганяється за 8,5 секунд, а його максималка 211 км/година.
+                                       Найпотужніший двигун V8 з об'ємом 6,990 кубічних сантиметрів має максимальну віддачу 390 кінських сил та пік крутного моменту 677 Нм.--
+                                   </p>
+                               </div>
+
+                    </span>
+                </span>
+            </span>
+
+            <div align="left" class="layer5">
+                <img src="https://github.com/Kyrylchuk-of/laba_12.kin/blob/main/wp2353909-1967-chevrolet-impala-wallpapers.jpg?raw=true"
+                     width="50%" height="50%">
+            </div>
+            <div align="right" class="layer4">
+                <img src="https://github.com/Kyrylchuk-of/laba_12.kin/blob/main/wp2353953-1967-chevrolet-impala-wallpapers.jpg?raw=true"
+                     width="50%" height="50%">
+            </div>
+            <span class="inlineBlock parent">
+                <span class="inlineBlock layer4">
+                    <span class="inlineBlock child1">
+                        <div class="blk">
+                            <img src="https://avtoaziya.ru/images/FOTO/1/Chevrolet-impala-1967-5.jpg"
+                                 width="100%" height="100%">
+                        </div>
+                    </span><span class="inlineBlock child2">
+                               <div class="blk">
+
+                                   Поскольку Импала третьего поколения вышла уже после заката «плавников»
+                                   и раздутых форм, то глядя на фото сразу замечаешь, что изменилась и 
+                                   стилистика четырехдверного кузова, он стал более прямолинейным с задними 
+                                   горизонтальными габаритными фонарями, вместо круглых, которые были на 
+                                   машинах 1965-го года выпуска. И хоть раздутые формы автомобиль потерял,
+                                   но хрома на нем осталось по-прежнему много. Массивные хромированные бампера
+                                   и решетка радиатора, так же стоит обратить внимание и на кнопочные дверные 
+                                   рукоятки – вот такими раньше были автомобили.
+                               </div>
+
+                    </span>
+                </span>
+            </span>
+
+            <div class="footer">
+                <!-- подвал сайта -->
+
+                <table border="1px;" style="float: left">
+                    <hr color="#808080" size="4px" />
+                    <tbody>
+                        <tr>
+                            <td>Мій коледж</td>
+                            <td><a href="http://www.tehcollege.rv.ua/" target="_blank">→→→→→ тисни тут →→→→→</a></td>
+                        </tr>
+                        <tr>
+                            <td>Мій Instagram</td>
+                            <td><a href="https://www.instagram.com/kyrylchuk_of/" target="_blank">→→→→→ тисни тут →→→→→</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>По всім запитанням звертатися сюди: <a href="mailto:o.kykylchuk12@gmail.com" target="_blank">o.kykylchuk12@gmail.com</a></h4>
+                <hr><center><h4 align="left">Сайт сворений спеціально для лабораторної роботи з обчислювальних систем для викладача Дмитра Володимировича.</h4></center>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
